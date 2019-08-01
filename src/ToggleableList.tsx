@@ -3,7 +3,7 @@ import React from "react";
 export interface ToggleableListProps {
   description: string;
   hidden: boolean;
-  items: string[];
+  items: (string | null)[];
   onChange: () => void;
 }
 
@@ -21,9 +21,7 @@ export const ToggleableList: React.FunctionComponent<ToggleableListProps> = ({
 
       {!hidden && (
         <ul>
-          {items.map(item => (
-            <li key={item}>{item}</li>
-          ))}
+          {items.map(item => item !== null && <li key={item}>{item}</li>)}
         </ul>
       )}
     </div>

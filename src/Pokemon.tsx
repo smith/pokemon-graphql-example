@@ -41,14 +41,14 @@ export const Pokemon: React.FunctionComponent<PokemonProps> = ({ name }) => {
     <div className="Pokemon">
       <h1>{name}</h1>
       <section>
-        <img src={image} alt={name} />
+        {image && <img src={image} alt={name} />}
         <ul>
           <li>{classification}</li>
           <li>
-            Height: {minHeight}&thinsp;&endash;&thinsp;{maxHeight}
+            Height: {minHeight}&thinsp;&ndash;&thinsp;{maxHeight}
           </li>
           <li>
-            Weight: {minWeight}&thinsp;&endash;&thinsp;{maxWeight}
+            Weight: {minWeight}&thinsp;&ndash;&thinsp;{maxWeight}
           </li>
           <li>Type: {types.join(", ")}</li>
         </ul>
