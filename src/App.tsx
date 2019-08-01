@@ -1,5 +1,15 @@
+import { ApolloClient } from "apollo-client";
+import { ApolloProvider } from "react-apollo";
+import { HttpLink } from "apollo-link-http";
+import { InMemoryCache } from "apollo-cache-inmemory";
 import Pokemon from "./Pokemon";
 import React from "react";
+
+const client = new ApolloClient({
+  connectToDevTools: true,
+  link: new HttpLink({ uri: "https://graphql-pokemon.now.sh" }),
+  cache: new InMemoryCache()
+});
 
 const App: React.FC = () => {
   const [searchQuery, setSearchQuery] = React.useState("");
@@ -10,7 +20,7 @@ const App: React.FC = () => {
   );
 
   return (
-    <>
+    <ApolloProvider client={client}>
       <header>
         <h1>Pokedex</h1>
         <input
@@ -22,7 +32,7 @@ const App: React.FC = () => {
         />
       </header>
       <main>{searchQuery && <Pokemon name={searchQuery} />}</main>
-    </>
+    </ApolloProvider>
   );
 };
 
