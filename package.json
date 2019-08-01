@@ -21,6 +21,8 @@
     "typescript": "3.5.3"
   },
   "scripts": {
+    "codegen": "apollo client:codegen  --globalTypesFile=src/types/.ignore --outputFlat  --localSchemaFile=schema.json --target=typescript src/types",
+    "schema": "apollo schema:download --endpoint=https://graphql-pokemon.now.sh",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
