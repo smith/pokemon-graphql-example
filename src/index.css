@@ -1,13 +1,55 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+main {
+  margin: 1em;
+}
+
+main > header > h1 {
+  display: inline;
+  margin-right: 1em;
+  font-size: 100%;
+  font-weight: normal;
+}
+
+main > header > input {
+  width: 200px;
+}
+
+ul {
+  list-style: none;
+  line-height: 1.5;
+  padding-left: 0;
+}
+
+.Pokemon h1 {
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+.Pokemon img {
+  height: 256px;
+  width: 256px;
+}
+
+.Pokemon > section {
+  float: left;
+  min-width: 200px;
+}
+
+.ToggleableList {
+  float: left;
+  min-width: 200px;
+  margin-left: 1em;
+}
+
+.ToggleableList ul {
+  max-height: 400px;
+  overflow-y: auto;
 }
