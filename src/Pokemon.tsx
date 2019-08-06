@@ -17,7 +17,7 @@ export const Pokemon: React.FunctionComponent<PokemonProps> = ({ name }) => {
   );
   const toggleMoves = () => setAreSpecialAttacksHidden(prevState => !prevState);
 
-  const data = {};
+  const pokemon = {};
   const loading = false;
   const types = ["Electric"];
   const minHeight = "0.35m";
@@ -33,7 +33,7 @@ export const Pokemon: React.FunctionComponent<PokemonProps> = ({ name }) => {
     return <Loading />;
   }
 
-  if (!data) {
+  if (!pokemon) {
     return <NotFound name={name} />;
   }
 
