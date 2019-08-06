@@ -1,9 +1,10 @@
+import { Attack } from "./Pokemon";
 import React from "react";
 
 export interface ToggleableListProps {
   description: string;
   hidden: boolean;
-  items: (string | null)[];
+  items: Attack[];
   onChange: () => void;
 }
 
@@ -21,7 +22,10 @@ export const ToggleableList: React.FunctionComponent<ToggleableListProps> = ({
 
       {!hidden && (
         <ul>
-          {items.map(item => item !== null && <li key={item}>{item}</li>)}
+          {items.map(
+            item =>
+              item !== null && item.name && <li key={item.name}>{item.name}</li>
+          )}
         </ul>
       )}
     </div>
